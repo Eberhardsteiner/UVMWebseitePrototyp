@@ -15,17 +15,20 @@ export default function HomePage() {
   useEffect(() => {
     if (location.hash) {
       const scrollToElement = () => {
-        const id = location.hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          const headerOffset = 80;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // Sanitize hash to prevent XSS: only allow alphanumeric, hyphens, and underscores
+        const id = location.hash.replace('#', '').replace(/[^a-zA-Z0-9_-]/g, '');
+        if (id) {
+          const element = document.getElementById(id);
+          if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
         }
       };
 
@@ -38,7 +41,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <ModelSection />
         <ProcessSection />

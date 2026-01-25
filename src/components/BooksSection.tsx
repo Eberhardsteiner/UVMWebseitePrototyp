@@ -97,7 +97,7 @@ export default function BooksSection() {
     <section id="publikationen" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 mb-12">
-          <div className="p-3 bg-teal-600 rounded-lg">
+          <div className="p-3 bg-primary-600 rounded-lg">
             <BookOpen size={32} className="text-white" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Publikationen</h2>
@@ -117,7 +117,7 @@ export default function BooksSection() {
               {/* Details */}
               <div>
                 <h3 className="font-bold text-lg text-gray-900">{book.title}</h3>
-                <p className="text-teal-600 text-sm">{book.authors}</p>
+                <p className="text-primary-600 text-sm">{book.authors}</p>
                 <div className="mt-2 text-gray-700 text-sm leading-snug">
                   {book.summary.map((line, idx) => (
                     <span key={idx} className="block">

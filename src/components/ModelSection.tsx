@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Heart, Brain, Shield, Target, Users, Lightbulb, Scale, TrendingUp, Cpu, Sparkles } from 'lucide-react';
+import { useScrollProgress } from '../hooks/useScrollProgress';
 
 const dimensions = [
   {
@@ -7,11 +8,11 @@ const dimensions = [
     title: 'Corporate Strategy',
     subtitle: 'Unternehmensstrategie',
     description: 'Die Organisation zukunftsorientiert ausrichten und richtungsweisend führen.',
-    bgColor: 'bg-amber-500',
-    lightBg: 'bg-amber-50',
-    borderColor: 'border-amber-200',
-    textColor: 'text-amber-700',
-    accentColor: 'text-amber-600',
+    bgColor: 'bg-tertiary-500',
+    lightBg: 'bg-tertiary-50',
+    borderColor: 'border-tertiary-200',
+    textColor: 'text-tertiary-700',
+    accentColor: 'text-tertiary-600',
     icon: Target,
     features: [
       { icon: TrendingUp, text: 'Marktorientierung & Innovation' },
@@ -24,11 +25,11 @@ const dimensions = [
     title: 'Culture',
     subtitle: 'Kultur',
     description: 'Das Fundament für Werte, Zusammenarbeit und Innovationsfreude.',
-    bgColor: 'bg-teal-500',
-    lightBg: 'bg-teal-50',
-    borderColor: 'border-teal-200',
-    textColor: 'text-teal-700',
-    accentColor: 'text-teal-600',
+    bgColor: 'bg-primary-500',
+    lightBg: 'bg-primary-50',
+    borderColor: 'border-primary-200',
+    textColor: 'text-primary-700',
+    accentColor: 'text-primary-500',
     icon: Heart,
     features: [
       { icon: Heart, text: 'Werteorientierung & Vertrauen' },
@@ -41,11 +42,11 @@ const dimensions = [
     title: 'Code of Conduct',
     subtitle: 'Verhaltensgrundsätze',
     description: 'Das Regelwerk für integres und faires Handeln, für wertschätzende Führung & Zusammenarbeit.',
-    bgColor: 'bg-rose-500',
-    lightBg: 'bg-rose-50',
-    borderColor: 'border-rose-200',
-    textColor: 'text-rose-700',
-    accentColor: 'text-rose-600',
+    bgColor: 'bg-quaternary-500',
+    lightBg: 'bg-quaternary-50',
+    borderColor: 'border-quaternary-200',
+    textColor: 'text-quaternary-700',
+    accentColor: 'text-quaternary-600',
     icon: Shield,
     features: [
       { icon: Shield, text: 'Ethik & Transparenz' },
@@ -58,11 +59,11 @@ const dimensions = [
     title: 'Competences',
     subtitle: 'Kompetenzen',
     description: 'Die entscheidenden Fähigkeiten für morgen entwickeln.',
-    bgColor: 'bg-cyan-500',
-    lightBg: 'bg-cyan-50',
-    borderColor: 'border-cyan-200',
-    textColor: 'text-cyan-700',
-    accentColor: 'text-cyan-600',
+    bgColor: 'bg-secondary-500',
+    lightBg: 'bg-secondary-50',
+    borderColor: 'border-secondary-200',
+    textColor: 'text-secondary-700',
+    accentColor: 'text-secondary-500',
     icon: Brain,
     features: [
       { icon: Cpu, text: 'Technologische Kompetenzen' },
@@ -73,47 +74,22 @@ const dimensions = [
 ];
 
 export default function ModelSection() {
-  const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const sectionTop = rect.top;
-      const sectionHeight = rect.height;
-
-      const startTrigger = windowHeight * 0.7;
-      const endTrigger = windowHeight * 0.3;
-
-      if (sectionTop < startTrigger && sectionTop + sectionHeight > 0) {
-        const progress = Math.min(Math.max((startTrigger - sectionTop) / (startTrigger - endTrigger), 0), 1);
-        setScrollProgress(progress);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { scrollProgress } = useScrollProgress({
+    elementRef: sectionRef,
+    startTrigger: 0.7,
+    endTrigger: 0.3,
+  });
 
   const getQuadrantTransform = (index: number) => {
-    const maxDistance = 250;
+    const maxDistance = 100;
     const distance = maxDistance * (1 - scrollProgress);
-    const rotation = 30 * (1 - scrollProgress);
-    const scale = 0.9 + (scrollProgress * 0.1);
-
-    const angles = [225, 315, 135, 45];
-    const angle = angles[index];
-    const radians = (angle * Math.PI) / 180;
-
-    const x = Math.cos(radians) * distance;
-    const y = Math.sin(radians) * distance;
-
-    return `translate(${x}px, ${y}px) rotate(${rotation * (index % 2 === 0 ? -1 : 1)}deg) scale(${scale})`;
+    
+    // Left side (index 0, 2) slides from left, right side (index 1, 3) slides from right
+    const isLeftSide = index % 2 === 0;
+    const x = isLeftSide ? -distance : distance;
+    
+    return `translateX(${x}px)`;
   };
 
   return (
@@ -124,7 +100,7 @@ export default function ModelSection() {
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Die Lösung ist ein integriertes System:
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600 block mt-2">Das 4C-Modell.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 block mt-2">Das 4C-Modell.</span>
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
             Erfolg in der Zukunft erfordert, die entscheidenden Handlungsfelder nicht mehr getrennt,
@@ -141,13 +117,13 @@ export default function ModelSection() {
                 className={`relative group rounded-2xl border-2 ${dim.borderColor} bg-white overflow-hidden hover:shadow-2xl transition-all duration-700`}
                 style={{
                   transform: getQuadrantTransform(index),
-                  opacity: 0.5 + (scrollProgress * 0.5),
+                  opacity: scrollProgress,
                 }}
               >
                 <div className={`${dim.bgColor} h-2 group-hover:h-3 transition-all duration-300`}></div>
 
                 <div className="p-8 lg:p-10">
-                  <div className="flex items-start gap-5 mb-6">
+                  <div className="flex items-center gap-5 mb-6">
                     <div className={`w-16 h-16 rounded-xl ${dim.lightBg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md`}>
                       <dim.icon className={dim.accentColor} size={32} />
                     </div>
@@ -185,7 +161,7 @@ export default function ModelSection() {
             }}
           >
             <div className="w-32 h-32 rounded-full bg-white shadow-2xl border-4 border-gray-100 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-400 via-cyan-400 to-amber-400 flex items-center justify-center">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-400 via-secondary-400 via-tertiary-400 to-quaternary-400 flex items-center justify-center">
                 <span className="text-white font-bold text-2xl">4C</span>
               </div>
             </div>
@@ -209,10 +185,10 @@ export default function ModelSection() {
               <div className="flex-shrink-0">
                 <div className="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
                   <div className="w-16 h-16 relative">
-                    <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-teal-400 rounded-tl-full"></div>
-                    <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-cyan-400 rounded-tr-full"></div>
-                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-rose-400 rounded-bl-full"></div>
-                    <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-amber-400 rounded-br-full"></div>
+                    <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-primary-400 rounded-tl-full"></div>
+                    <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-secondary-400 rounded-tr-full"></div>
+                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-quaternary-400 rounded-bl-full"></div>
+                    <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-tertiary-400 rounded-br-full"></div>
                   </div>
                 </div>
               </div>

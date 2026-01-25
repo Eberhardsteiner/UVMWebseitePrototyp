@@ -1,32 +1,41 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import UnternehmenPage from './pages/UnternehmenPage';
-import FuehrungskraeftequalifizierungPage from './pages/FuehrungskraeftequalifizierungPage';
-import ImpressumPage from './pages/ImpressumPage';
-import DatenschutzPage from './pages/DatenschutzPage';
-import NotFoundPage from './pages/NotFoundPage';
+import ErrorBoundary from './components/ErrorBoundary';
+import { BASE_PATH, ROUTES } from './constants/paths';
+
+// Lazy load routes for code splitting
+const UnternehmenPage = lazy(() => import('./pages/UnternehmenPage'));
+const FuehrungskraeftequalifizierungPage = lazy(() => import('./pages/FuehrungskraeftequalifizierungPage'));
+const ImpressumPage = lazy(() => import('./pages/ImpressumPage'));
+const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
+// Loading fallback component
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500"></div>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <BrowserRouter basename="/web2026">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/unternehmen" element={<UnternehmenPage />} />
-
-        {/* Details-Seite */}
-        <Route
-          path="/fuehrungskraeftequalifizierung"
-          element={<FuehrungskraeftequalifizierungPage />}
-        />
-
-        {/* Rechtliches */}
-        <Route path="/impressum" element={<ImpressumPage />} />
-        <Route path="/datenschutz" element={<DatenschutzPage />} />
-
-        {/* Verhindert „leere Seite" bei Tippfehlern */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter basename={BASE_PATH}>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path={ROUTES.HOME} element={<HomePage />} />
+            <Route path={ROUTES.UNTERNEHMEN} element={<UnternehmenPage />} />
+            <Route path={ROUTES.FUEHRUNGSKRAEFTEQUALIFIZIERUNG} element={<FuehrungskraeftequalifizierungPage />} />
+            <Route path={ROUTES.IMPRESSUM} element={<ImpressumPage />} />
+            <Route path={ROUTES.DATENSCHUTZ} element={<DatenschutzPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 

@@ -70,7 +70,7 @@ function TopicBadges({ topics }: { topics: string[] }) {
       {topics.map((t) => (
         <span
           key={t}
-          className="inline-flex items-center rounded-full bg-teal-50 px-3 py-1 text-sm text-teal-800 border border-teal-100"
+          className="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-sm text-primary-800 border border-primary-100"
         >
           {t}
         </span>
@@ -81,10 +81,10 @@ function TopicBadges({ topics }: { topics: string[] }) {
 
 export default function NetworkPartnersSection() {
   return (
-    <section id="netzwerk" className="py-20 bg-teal-50">
+    <section id="netzwerk" className="py-20 bg-primary-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 mb-12">
-          <div className="p-3 bg-teal-600 rounded-lg">
+          <div className="p-3 bg-primary-600 rounded-lg">
             <Users size={32} className="text-white" />
           </div>
           <div>
@@ -96,7 +96,7 @@ export default function NetworkPartnersSection() {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-teal-100 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-sm border border-primary-100 overflow-hidden">
           <div className="p-6 md:p-8 border-b border-gray-100">
             <p className="text-lg text-gray-700 leading-relaxed">
               Hier finden Sie eine Übersicht der Netzwerkpartner. Jeder Eintrag ist als Dropdown aufgebaut.
@@ -133,8 +133,8 @@ export default function NetworkPartnersSection() {
                         <a
                           href={p.website.url}
                           target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-lg bg-teal-600 px-5 py-2.5 text-white font-medium hover:bg-teal-700 transition-colors"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-5 py-2.5 text-white font-medium hover:bg-primary-700 transition-colors"
                         >
                           Zur Webseite
                           <ExternalLink size={16} className="text-white" />

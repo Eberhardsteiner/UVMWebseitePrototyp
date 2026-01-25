@@ -8,7 +8,7 @@ interface CompetenceAccordionProps {
   defaultOpen?: boolean;
 }
 
-export default function CompetenceAccordion({ title, children, bgClass = "bg-gradient-to-r from-teal-50 to-white", defaultOpen = false }: CompetenceAccordionProps) {
+export default function CompetenceAccordion({ title, children, bgClass = "bg-gradient-to-r from-primary-50 to-white", defaultOpen = false }: CompetenceAccordionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
@@ -20,7 +20,7 @@ export default function CompetenceAccordion({ title, children, bgClass = "bg-gra
         <h5 className="font-bold text-gray-900 text-lg">{title}</h5>
         <ChevronDown
           size={20}
-          className={`text-teal-600 transition-transform duration-200 flex-shrink-0 ml-4 ${
+          className={`text-primary-600 transition-transform duration-200 flex-shrink-0 ml-4 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />

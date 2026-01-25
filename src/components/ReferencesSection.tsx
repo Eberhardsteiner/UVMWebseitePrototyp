@@ -181,7 +181,7 @@ export default function ReferencesSection() {
     <section id="referenzen" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 mb-12">
-          <div className="p-3 bg-teal-600 rounded-lg">
+          <div className="p-3 bg-primary-600 rounded-lg">
             <Award size={32} className="text-white" />
           </div>
           <div className="min-w-0">
@@ -196,14 +196,14 @@ export default function ReferencesSection() {
           {referenceGroups.map((group) => (
             <div key={group.letter}>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold text-xl flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-primary-600 text-white flex items-center justify-center font-bold text-xl flex-shrink-0">
                   {group.letter}
                 </div>
               </div>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
                 {group.entries.map((entry) => (
                   <li key={entry.name} className="flex items-start gap-3">
-                    <span className="mt-2 w-2 h-2 bg-teal-600 rounded-full flex-shrink-0" />
+                    <span className="mt-2 w-2 h-2 bg-primary-600 rounded-full flex-shrink-0" />
                     <div className="min-w-0">
                       <div className="break-words">{entry.name}</div>
                       {entry.websiteUrl && (
@@ -211,8 +211,8 @@ export default function ReferencesSection() {
                           <a
                             href={entry.websiteUrl}
                             target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 rounded-lg bg-teal-600 px-4 py-2 text-white text-sm font-medium hover:bg-teal-700 transition-colors"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-white text-sm font-medium hover:bg-primary-700 transition-colors"
                           >
                             Webseite
                             <ExternalLink size={14} />

@@ -19,11 +19,11 @@ export default function AccordionItem({ title, subtitle, children, defaultOpen =
       >
         <div className="flex-1">
           <h3 className="text-2xl font-bold text-gray-900 mb-1">{title}</h3>
-          <p className="text-teal-600 font-medium">{subtitle}</p>
+          <p className="text-primary-600 font-medium">{subtitle}</p>
         </div>
         <ChevronDown
           size={28}
-          className={`text-teal-600 transition-transform duration-300 flex-shrink-0 ml-4 ${
+          className={`text-primary-600 transition-transform duration-300 flex-shrink-0 ml-4 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />

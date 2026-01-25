@@ -15,6 +15,7 @@ import {
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { ROUTES, SECTIONS } from '../constants/paths';
 
 type TopicGroup = {
   title: string;
@@ -33,9 +34,9 @@ type Category = {
 };
 
 const accentClasses: Record<Category['accent'], { iconBg: string; border: string }> = {
-  teal: { iconBg: 'bg-teal-600', border: 'border-teal-100' },
-  cyan: { iconBg: 'bg-cyan-600', border: 'border-cyan-100' },
-  amber: { iconBg: 'bg-amber-500', border: 'border-amber-100' },
+  teal: { iconBg: 'bg-primary-500', border: 'border-primary-100' },
+  cyan: { iconBg: 'bg-secondary-500', border: 'border-secondary-100' },
+  amber: { iconBg: 'bg-tertiary-500', border: 'border-tertiary-100' },
   violet: { iconBg: 'bg-violet-600', border: 'border-violet-100' },
 };
 
@@ -201,7 +202,7 @@ export default function FuehrungskraeftequalifizierungPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <main className="pt-16 md:pt-20">
+      <main id="main-content" className="pt-16 md:pt-20">
         <section className="py-16 md:py-20 bg-gradient-to-br from-violet-50 to-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <button
@@ -302,21 +303,21 @@ export default function FuehrungskraeftequalifizierungPage() {
               })}
             </div>
 
-            <div className="mt-12 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-2xl p-8 md:p-10 text-white">
+            <div className="mt-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 md:p-10 text-white">
               <h3 className="text-2xl md:text-3xl font-bold">Details besprechen</h3>
-              <p className="mt-3 text-teal-100 leading-relaxed max-w-2xl">
+              <p className="mt-3 text-white/90 leading-relaxed max-w-2xl">
                 Wenn Sie Zielgruppe, Führungslevel und Kontext nennen, lässt sich daraus ein passender Lernpfad
                 ableiten und priorisieren.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center bg-white text-teal-700 px-6 py-3 rounded-lg font-medium hover:bg-teal-50 transition-colors"
+                  className="inline-flex items-center justify-center bg-white text-primary-700 px-6 py-3 rounded-lg font-medium hover:bg-primary-50 transition-colors"
                 >
                   Zur Startseite
                 </Link>
                 <Link
-                  to="/#kontakt"
+                  to={`${ROUTES.HOME}${SECTIONS.KONTAKT}`}
                   className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-colors"
                 >
                   Kontakt aufnehmen

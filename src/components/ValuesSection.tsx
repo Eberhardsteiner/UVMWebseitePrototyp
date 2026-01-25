@@ -7,8 +7,8 @@ export default function ValuesSection() {
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal-50 flex items-center justify-center">
-                <Search className="text-teal-600" size={28} />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-50 flex items-center justify-center">
+                <Search className="text-primary-600" size={28} />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">Wissenschaftlich fundiert</h4>
               <p className="text-gray-600 text-sm">
@@ -16,8 +16,8 @@ export default function ValuesSection() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-50 flex items-center justify-center">
-                <Map className="text-amber-600" size={28} />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-tertiary-50 flex items-center justify-center">
+                <Map className="text-tertiary-600" size={28} />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">Systematisch & Messbar</h4>
               <p className="text-gray-600 text-sm">
@@ -25,8 +25,8 @@ export default function ValuesSection() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyan-50 flex items-center justify-center">
-                <Rocket className="text-cyan-600" size={28} />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary-50 flex items-center justify-center">
+                <Rocket className="text-secondary-600" size={28} />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">Praktisch & Umsetzbar</h4>
               <p className="text-gray-600 text-sm">
