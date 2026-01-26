@@ -7,7 +7,7 @@ export default function ImpressumPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 mb-8 transition-colors"
         >
           <ArrowLeft size={20} />
           Zurück zur Startseite

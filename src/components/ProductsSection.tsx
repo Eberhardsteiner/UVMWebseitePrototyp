@@ -1,5 +1,6 @@
-import { useState, ReactNode, useEffect, useRef } from 'react';
+import { useState, ReactNode, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useScrollProgress } from '../hooks/useScrollProgress';
 import {
   BarChart3,
   Users,
@@ -8,7 +9,6 @@ import {
   Cpu,
   Gamepad2,
   Sparkles,
-  ArrowRight,
   Workflow,
   Target,
   Shield,
@@ -59,7 +59,7 @@ const quadrants = [
           'KI entfaltet nur dann Wirkung, wenn Organisation, Prozesse und Menschen „ready“ sind – nicht nur die Technologie.',
           'Mit diesem Produkt schaffen wir die Voraussetzungen für erfolgreichen KI‑Einsatz: Wir prüfen Reifegrad und Einsatzfelder, klären Daten‑/Prozess‑Grundlagen, definieren Governance (z. B. Rollen, Datenschutz, Sicherheit, Ethik) und bauen die nötigen Kompetenzen sowie Akzeptanz im Alltag auf.',
           'Ergebnis ist ein umsetzbarer Fahrplan von Pilot‑Use‑Cases bis Skalierung – integriert in Strategie, Kultur und klare Leitplanken, damit KI nachhaltig, verantwortungsvoll und messbar wirkt.',
-          <>Weitere Informationen: <a href="https://uvm-akademie.de/ki/dist/index.html" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline font-medium">uvm-akademie.de/ki</a></>,
+          <>Weitere Informationen: <a href="https://uvm-cg.de/ki/dist/index.html" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline font-medium">uvm-cg.de/ki</a></>,
           ],
         icon: TrendingUp,
       },
@@ -92,7 +92,7 @@ const quadrants = [
           'In Zeiten von Fachkräftemangel und wachsender Arbeitgeberbewertung reicht es nicht, sich nur intern als attraktiv zu sehen – entscheidend ist, ob Mitarbeitende ihr Unternehmen wirklich weiterempfehlen würden.',
           'Mit dem Zertifikat „Empfehlenswerter Arbeitgeber" führen wir ein wissenschaftlich fundiertes Audit durch, das auf echte Mitarbeiterorientierung, Führungsqualität, Entwicklungsmöglichkeiten und Weiterempfehlungsbereitschaft prüft.',
           'Das Ergebnis: eine unabhängige Auszeichnung, die nach außen Glaubwürdigkeit schafft und nach innen konkrete Verbesserungsfelder aufzeigt – mit klaren Empfehlungen für nachhaltige Arbeitgeberattraktivität.',
-          <>Weitere Informationen unter: <a href="https://www.empfehlenswerter-arbeitgeber.de" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline font-medium">www.empfehlenswerter-arbeitgeber.de</a></>,
+          <>Weitere Informationen unter: <a href="https://www.empfehlenswerter-arbeitgeber.de" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline font-medium">www.empfehlenswerter-arbeitgeber.de</a></>,
         ],
         icon: Award,
       },
@@ -109,7 +109,7 @@ const quadrants = [
   {
     title: 'Code of Conduct',
     position: 'bottom-left',
-    color: 'cyan',
+    color: 'rose',
     products: [
       {
         name: 'Leadership Principles & Sensegiving',
@@ -123,7 +123,7 @@ const quadrants = [
                           <img src="https://media.springernature.com/w153/springer-static/cover-hires/book/978-3-662-69652-1" alt="Buchcover" className="w-24 h-auto rounded shadow-lg hover:shadow-xl transition-shadow" />
                         </a>
                         <div className="flex-1">
-                          <p className="text-sm">Unser Buch zum Thema: <a href="https://link.springer.com/book/10.1007/978-3-662-69652-1" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline font-medium">Springer-Verlag</a></p>
+                          <p className="text-sm">Unser Buch zum Thema: <a href="https://link.springer.com/book/10.1007/978-3-662-69652-1" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline font-medium">Springer-Verlag</a></p>
                         </div>
                       </div>,
                       ],
@@ -159,7 +159,7 @@ const quadrants = [
   {
     title: 'Competences',
     position: 'bottom-right',
-    color: 'rose',
+    color: 'cyan',
     products: [
       {
         name: 'Kompetenzmanagement, Future Skills & Coaching',
@@ -167,7 +167,7 @@ const quadrants = [
           'Wenn sich Anforderungen durch Disruption so schnell verschieben, entscheidet nicht „mehr Training“, sondern die richtigen Fähigkeiten zur richtigen Zeit.',
           'Mit diesem Produkt machen wir Kompetenzen steuerbar: Wir leiten Future Skills aus Strategie und Rollen ab, erfassen den Ist‑Stand (Skill‑Profil, Skill‑Gap, kritische Rollen) und priorisieren die größten Hebel. Durch 270- oder 360 Grad-Feedbacks evaluieren wir Kompetenzen und empfehlen in individuellen Feedbackgesprächen Entwicklungsmaßnahmen.',
           'Wir bauen eine unternehmensspezifische Lernumgebung, die wirklich wirkt (Praxisprojekte, Peer‑Learning, kurze Lernformate, Transfer in den Alltag) – inklusive Messgrößen, damit Entwicklung sichtbar wird und die Organisation dauerhaft lernfähig bleibt. Durch unsere zertifizierten Coaches begleichten wir Führungskräfte in ihrer Entwicklung auch langfristig.',
-  <>Weitere Informationen unter: <a href="https://www.uvm-coaching.de" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700 underline font-medium">www.uvm-coaching.de</a></>,],
+  <>Weitere Informationen unter: <a href="https://www.uvm-coaching.de" target="_blank" rel="noopener noreferrer" className="text-tertiary-600 hover:text-tertiary-700 underline font-medium">www.uvm-coaching.de</a></>,],
 
         icon: Users,
       },
@@ -181,7 +181,7 @@ const quadrants = [
         description: [ 'In disruptiven Zeiten braucht es Lernformate, die nicht nur Wissen vermitteln, sondern Handeln trainieren und dadurch Handlungskompetenz aufbauen.',
                       'Mit Business Gaming & Outdoor Learning schaffen wir realitätsnahe Simulationen und herausfordernde Settings, in denen Teams Entscheidungen unter Unsicherheit treffen, Rollen klären, kommunizieren und zusammenarbeiten – mit unmittelbarem Feedback.',
                       'Der entscheidende Teil ist der Transfer: Wir reflektieren gemeinsam, was funktioniert hat, wo Reibungsverluste entstanden sind und welche konkreten Routinen/Prinzipien daraus in den Arbeitsalltag übernommen werden. So werden Kompetenzen, Zusammenarbeit und Führungsverhalten spürbar weiterentwickelt – praxisnah und wirksam.',
-                      <>Weitere Informationen unter: <a href="https://www.uvm-active.de" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700 underline font-medium">www.uvm-active.de</a></>,
+                      <>Weitere Informationen unter: <a href="https://www.uvm-active.de" target="_blank" rel="noopener noreferrer" className="text-tertiary-600 hover:text-tertiary-700 underline font-medium">www.uvm-active.de</a></>,
                       ],
         icon: Gamepad2,
       },
@@ -200,64 +200,44 @@ const quadrants = [
 
 const colorClasses = {
   teal: {
-    bg: 'bg-teal-50',
-    border: 'border-teal-200',
-    text: 'text-teal-800',
-    accent: 'text-teal-600',
-    gradient: 'from-teal-400 to-teal-500',
+    bg: 'bg-primary-50',
+    border: 'border-primary-200',
+    text: 'text-primary-700',
+    accent: 'text-primary-500',
+    gradient: 'from-primary-400 to-primary-500',
   },
   cyan: {
-    bg: 'bg-cyan-50',
-    border: 'border-cyan-200',
-    text: 'text-cyan-800',
-    accent: 'text-cyan-600',
-    gradient: 'from-cyan-400 to-teal-400',
+    bg: 'bg-secondary-50',
+    border: 'border-secondary-200',
+    text: 'text-secondary-700',
+    accent: 'text-secondary-500',
+    gradient: 'from-secondary-400 to-secondary-500',
   },
   amber: {
-    bg: 'bg-amber-50',
-    border: 'border-amber-200',
-    text: 'text-amber-800',
-    accent: 'text-amber-600',
-    gradient: 'from-amber-400 to-amber-300',
+    bg: 'bg-tertiary-50',
+    border: 'border-tertiary-200',
+    text: 'text-tertiary-700',
+    accent: 'text-tertiary-600',
+    gradient: 'from-tertiary-400 to-tertiary-300',
   },
   rose: {
-    bg: 'bg-rose-50',
-    border: 'border-rose-200',
-    text: 'text-rose-800',
-    accent: 'text-rose-600',
-    gradient: 'from-rose-500 to-pink-400',
+    bg: 'bg-quaternary-50',
+    border: 'border-quaternary-200',
+    text: 'text-quaternary-700',
+    accent: 'text-quaternary-600',
+    gradient: 'from-quaternary-500 to-quaternary-400',
   },
 };
 
 export default function ProductsSection() {
   const [modalContent, setModalContent] = useState<{ title: string; description: string | Array<string | ReactNode> } | null>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const sectionTop = rect.top;
-      const sectionHeight = rect.height;
-
-      const startTrigger = windowHeight * 0.8;
-      const endTrigger = windowHeight * 0.2;
-
-      if (sectionTop < startTrigger && sectionTop + sectionHeight > 0) {
-        const progress = Math.min(Math.max((startTrigger - sectionTop) / (startTrigger - endTrigger), 0), 1);
-        setScrollProgress(progress);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { scrollProgress } = useScrollProgress({
+    elementRef: sectionRef,
+    startTrigger: 0.8,
+    endTrigger: 0.2,
+  });
 
   const openModal = (title: string, description: string | Array<string | ReactNode>) => {
     setModalContent({ title, description });
@@ -273,23 +253,18 @@ export default function ProductsSection() {
   };
 
   const getQuadrantTransform = (index: number) => {
-    const maxDistance = 300;
+    const maxDistance = 100;
     const distance = maxDistance * (1 - scrollProgress);
-    const rotation = 45 * (1 - scrollProgress);
-    const scale = 0.85 + (scrollProgress * 0.15);
-
-    const angles = [225, 315, 135, 45];
-    const angle = angles[index];
-    const radians = (angle * Math.PI) / 180;
-
-    const x = Math.cos(radians) * distance;
-    const y = Math.sin(radians) * distance;
-
-    return `translate(${x}px, ${y}px) rotate(${rotation * (index % 2 === 0 ? 1 : -1)}deg) scale(${scale})`;
+    
+    // Left side (index 0, 2) slides from left, right side (index 1, 3) slides from right
+    const isLeftSide = index % 2 === 0;
+    const x = isLeftSide ? -distance : distance;
+    
+    return `translateX(${x}px)`;
   };
 
   return (
-    <section ref={sectionRef} id="leistungen" className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section ref={sectionRef} id="leistungen" className="pt-28 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-gray-50 to-white relative overflow-visible">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(20,184,166,0.05),transparent_60%)] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -298,7 +273,7 @@ export default function ProductsSection() {
             <div
               className="w-96 h-96 rounded-full transition-opacity duration-700"
               style={{
-                background: 'conic-gradient(from 0deg, #fbbf24, #14b8a6, #22d3ee, #f43f5e, #fbbf24)',
+                background: 'conic-gradient(from 0deg, #001B2C, #3C4449, #B8C2D1, #6B7F95, #001B2C)',
                 maskImage: 'radial-gradient(circle, transparent 168px, black 168px)',
                 WebkitMaskImage: 'radial-gradient(circle, transparent 168px, black 168px)',
                 opacity: scrollProgress * 0.6,
@@ -315,7 +290,7 @@ export default function ProductsSection() {
                   className={`bg-gradient-to-br ${colors.gradient} rounded-2xl p-8 text-white relative z-10 hover:shadow-2xl transition-all duration-700`}
                   style={{
                     transform: getQuadrantTransform(index),
-                    opacity: 0.4 + (scrollProgress * 0.6),
+                    opacity: scrollProgress,
                   }}
                 >
                   <h3 className="text-2xl font-bold mb-6 border-b border-white/20 pb-4 group-hover:scale-105 transition-transform duration-300">
@@ -327,8 +302,8 @@ export default function ProductsSection() {
                         key={product.name}
                         className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 hover:scale-105 transition-all duration-300 group"
                       >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex items-start gap-3 flex-1">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="flex items-center gap-3 flex-1">
                             <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                               <product.icon size={20} className="text-white" />
                             </div>
@@ -395,7 +370,7 @@ export default function ProductsSection() {
               {modalContent.title === 'Führungskräftequalifizierung' && (
                 <button
                   onClick={goToLeadershipDetails}
-                  className="px-6 py-2 rounded-lg font-medium transition-colors border border-teal-600 text-teal-700 hover:bg-teal-50"
+                  className="px-6 py-2 rounded-lg font-medium transition-colors border border-primary-600 text-primary-700 hover:bg-primary-50"
                 >
                   Details
                 </button>
@@ -403,7 +378,7 @@ export default function ProductsSection() {
 
               <button
                 onClick={closeModal}
-                className="px-6 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg font-medium transition-colors"
+                className="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
               >
                 Schließen
               </button>

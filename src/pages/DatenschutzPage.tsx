@@ -7,7 +7,7 @@ export default function DatenschutzPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 mb-8 transition-colors"
         >
           <ArrowLeft size={20} />
           Zurück zur Startseite
@@ -166,7 +166,7 @@ export default function DatenschutzPage() {
               Beim Aufrufen von Skript- oder Schriftbibliotheken wir automatisch eine Verbindung zum Betreiber der Bibliothek hergestellt. Es besteht hierbei theoretisch die Möglichkeit für diesen Betreiber, Daten zu erfassen. Derzeit ist nicht bekannt, ob und zu welchem Zweck die Betreiber der entsprechenden Bibliotheken tatsächlich Daten erfassen.
             </p>
             <p className="text-gray-700">
-              Hier finden Sie die Datenschutzbestimmungen des Betreibers der Google-Bibliothek: <a href="https://www.google.com/policies/privacy" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">https://www.google.com/policies/privacy</a>.
+              Hier finden Sie die Datenschutzbestimmungen des Betreibers der Google-Bibliothek: <a href="https://www.google.com/policies/privacy" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline">https://www.google.com/policies/privacy</a>.
             </p>
           </section>
 
@@ -200,7 +200,7 @@ export default function DatenschutzPage() {
           <section className="pt-6 border-t border-gray-200">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Google Maps</h2>
             <p className="text-gray-700 leading-relaxed">
-              Wir binden die Landkarten des Dienstes "Google Maps" des Anbieters Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, ein. Zu den verarbeiteten Daten können insbesondere IP-Adressen und Standortdaten der Nutzer gehören, die jedoch nicht ohne deren Einwilligung (im Regelfall im Rahmen der Einstellungen ihrer Mobilgeräte vollzogen), erhoben werden. Die Daten können in den USA verarbeitet werden. Datenschutzerklärung: <a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">https://www.google.com/policies/privacy/</a>, Opt-Out: <a href="https://adssettings.google.com/authenticated" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">https://adssettings.google.com/authenticated</a>.
+              Wir binden die Landkarten des Dienstes "Google Maps" des Anbieters Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, ein. Zu den verarbeiteten Daten können insbesondere IP-Adressen und Standortdaten der Nutzer gehören, die jedoch nicht ohne deren Einwilligung (im Regelfall im Rahmen der Einstellungen ihrer Mobilgeräte vollzogen), erhoben werden. Die Daten können in den USA verarbeitet werden. Datenschutzerklärung: <a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline">https://www.google.com/policies/privacy/</a>, Opt-Out: <a href="https://adssettings.google.com/authenticated" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline">https://adssettings.google.com/authenticated</a>.
             </p>
           </section>
 

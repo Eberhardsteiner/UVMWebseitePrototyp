@@ -1,5 +1,6 @@
 import { Linkedin, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ROUTES, SECTIONS } from '../constants/paths';
 
 export default function Footer() {
   return (
@@ -16,22 +17,24 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-teal-600 transition-colors"
+                href="https://www.linkedin.com/company/uvm-consulting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-500 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
               <a
                 href="mailto:info@uvm-cg.de"
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-teal-600 transition-colors"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-500 transition-colors"
                 aria-label="Email"
               >
                 <Mail size={18} />
               </a>
               <a
                 href="tel:+498915900075"
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-teal-600 transition-colors"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-500 transition-colors"
                 aria-label="Phone"
               >
                 <Phone size={18} />
@@ -43,16 +46,16 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">4C-Modell</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="/#modell" className="hover:text-teal-400 transition-colors">Culture</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Culture</Link>
               </li>
               <li>
-                <a href="/#modell" className="hover:text-teal-400 transition-colors">Competences</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Competences</Link>
               </li>
               <li>
-                <a href="/#modell" className="hover:text-teal-400 transition-colors">Code of Conduct</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Code of Conduct</Link>
               </li>
               <li>
-                <a href="/#modell" className="hover:text-teal-400 transition-colors">Corporate Strategy</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Corporate Strategy</Link>
               </li>
             </ul>
           </div>
@@ -61,16 +64,16 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">Leistungen</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="/#leistungen" className="hover:text-teal-400 transition-colors">4C QuickScan</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">4C QuickScan</Link>
               </li>
               <li>
-                <a href="/#leistungen" className="hover:text-teal-400 transition-colors">Kompetenzmanagement</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">Kompetenzmanagement</Link>
               </li>
               <li>
-                <a href="/#leistungen" className="hover:text-teal-400 transition-colors">Kulturentwicklung</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">Kulturentwicklung</Link>
               </li>
               <li>
-                <a href="/#leistungen" className="hover:text-teal-400 transition-colors">KI & Führung</a>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">KI & Führung</Link>
               </li>
             </ul>
           </div>
@@ -81,9 +84,8 @@ export default function Footer() {
             2026 UVM Consulting Group. Alle Rechte vorbehalten.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <Link to="/impressum" className="hover:text-teal-400 transition-colors">Impressum</Link>
-            <Link to="/datenschutz" className="hover:text-teal-400 transition-colors">Datenschutz</Link>
-            
+            <Link to={ROUTES.IMPRESSUM} className="hover:text-primary-400 transition-colors">Impressum</Link>
+            <Link to={ROUTES.DATENSCHUTZ} className="hover:text-primary-400 transition-colors">Datenschutz</Link>
           </div>
         </div>
       </div>
