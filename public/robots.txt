@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://uvm-cg.de/sitemap.xml
+Sitemap: https://uvm-akademie.de/web2026/sitemap.xml
