@@ -8,6 +8,7 @@ import NetworkPartnersSection from '../components/NetworkPartnersSection';
 import ReferencesSection from '../components/ReferencesSection';
 import BooksSection from '../components/BooksSection';
 import { Building2, Target, UserCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { BASE_PATH } from '../constants/paths';
 
 type Company = {
   name: string;
@@ -98,7 +99,7 @@ function CompanyCard({ company }: { company: Company }) {
 const groupCompanies: Company[] = [
   {
     name: 'UVM-Institut',
-    logoSrc: '/img/brands/UVM_Institut.png',
+    logoSrc: `${BASE_PATH}/img/brands/UVM_Institut.png`,
     focus:
       'Das UVM-Institut verbindet Ökonomie und Psychologie und unterstützt Unternehmen dabei, wirtschaftliche Ziele mit Blick auf menschliches Verhalten umzusetzen. Im Mittelpunkt stehen Strategie- und Veränderungsmanagement, Kompetenz- und Führungskräfteentwicklung sowie Controlling- und Management-Themen. Das Angebot reicht von Beratung und Coachings über Workshops und Schulungen bis zu unternehmensweiten Projekten.',
     website: 'https://www.uvm-institut.de',
@@ -106,7 +107,7 @@ const groupCompanies: Company[] = [
   },
   {
     name: 'UVM Coaching',
-    logoSrc: '/img/brands/UVM_Coaching.png',
+    logoSrc: `${BASE_PATH}/img/brands/UVM_Coaching.png`,
     focus:
       'UVM Coaching arbeitet nach dem Ansatz des Systemischen Management Coachings (SMC) und begleitet Führungskräfte dabei, eigene Lösungen zu entwickeln. Für Unternehmen werden individuelle Coachingmaßnahmen angeboten, von Top-Executive Coaching bis Teamcoaching und E-Coaching. Privatpersonen unterstützt UVM Coaching bei beruflicher Neuorientierung und beim Stärken persönlicher Ressourcen und Kompetenzen.',
     website: 'https://www.uvm-coaching.de',
@@ -114,7 +115,7 @@ const groupCompanies: Company[] = [
   },
   {
     name: 'UVM Active',
-    logoSrc: '/img/brands/UVM_Active_Ohne_Zusatz.png',
+    logoSrc: `${BASE_PATH}/img/brands/UVM_Active_Ohne_Zusatz.png`,
     focus:
       'UVM Active bietet erlebnisorientierte Entwicklungsformate, bei denen Teams und Führungskräfte in herausfordernden Übungen gemeinsam lernen. Schwerpunkte sind Team Building und Leadership Development, ergänzt durch Outdoor-Trainings, die Lernen emotional verankern. Alle Übungen werden auf den konkreten Arbeitskontext der Teilnehmenden übertragen, damit der Transfer in den Alltag gelingt.',
     website: 'https://uvm-active.de',
@@ -131,14 +132,14 @@ const groupCompanies: Company[] = [
   },
    {
     name: 'UVM-Akademie',
-    logoSrc: '/img/brands/UVM_Akademie.png',
+    logoSrc: `${BASE_PATH}/img/brands/UVM_Akademie.png`,
     focus:
       'In der UVM-Akademie bündeln wir unsere Fort- und Weiterbildungsangebote sowie den Bereich der Führungskräfteentwicklung. Ebenso haben wir hier die gesamte E-Learning-Aktivitäten und Business Games (z.B. Crisis Manager) fokussiert"',
     
   },
    {
     name: 'UVM-Innovationlab',
-    logoSrc: '/img/brands/UVM_Innovation_Lab_Ohne_Zusatz.png',
+    logoSrc: `${BASE_PATH}/img/brands/UVM_Innovation_Lab_Ohne_Zusatz.png`,
     focus:
       'Das UVM Innovation Lab bietet Beratung und individuell konzipierte Workshops für Unternehmen an, um Kreativität und Innovation systematisch zu stärken. Dabei kommen agile Methoden wie Design Thinking und die Ideenstrom-Methode zum Einsatz. Der Ansatz ist interdisziplinär und verbindet Wirtschaftswissenschaften und Wirtschaftspsychologie auf Basis wissenschaftlicher Erkenntnisse. Innovation wird dabei nicht nur als kreativer Prozess verstanden, sondern auch in ihren psychologischen und organisatorischen Auswirkungen betrachtet, etwa mit Blick auf Motivation, Neurobiologie und Change Management.',
     
@@ -217,7 +218,7 @@ export default function UnternehmenPage() {
               <AccordionItem
                 title="Prof. Dr. Miriam Landes"
                 subtitle="Diplom-Psychologin, Humanbiologin und promovierte Expertin im Bereich Motivation und Persönlichkeit (LMU München)"
-                imageSrc="/img/people/MiriamLandes.jpg"
+                imageSrc={`${BASE_PATH}/img/people/MiriamLandes.jpg`}
                 imageAlt="Prof. Dr. Miriam Landes"
               >
                 <div className="space-y-6 text-base text-gray-700">
@@ -348,7 +349,7 @@ export default function UnternehmenPage() {
               <AccordionItem
                 title="Prof. Dr. Eberhard Steiner"
                 subtitle="Wirtschaftswissenschaftler, Dr. rer. pol. (TU Freiberg), Dipl.-Kfm. (Univ.), Dipl.-Betriebswirt (FH), Experte für Strategie, Digitalisierung und Innovation"
-                imageSrc="/img/people/EberhardSteiner.jpg"
+                imageSrc={`${BASE_PATH}/img/people/EberhardSteiner.jpg`}
                 imageAlt="Prof. Dr. Eberhard Steiner"
               >
                 <div className="space-y-6 text-base text-gray-700">
