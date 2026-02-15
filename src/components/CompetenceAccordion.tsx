@@ -17,7 +17,7 @@ export default function CompetenceAccordion({ title, children, bgClass = "bg-gra
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-4 flex items-center justify-between text-left transition-opacity hover:opacity-80"
       >
-        <h5 className="font-bold text-gray-900 text-lg">{title}</h5>
+        <h5 className="text-xl font-bold text-gray-900">{title}</h5>
         <ChevronDown
           size={20}
           className={`text-primary-600 transition-transform duration-200 flex-shrink-0 ml-4 ${

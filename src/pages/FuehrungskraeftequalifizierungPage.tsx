@@ -208,7 +208,7 @@ export default function FuehrungskraeftequalifizierungPage() {
             <button
               type="button"
               onClick={() => navigate(-1)}
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-violet-700 transition-colors font-medium"
+              className="inline-flex items-center gap-2 text-base text-gray-600 hover:text-violet-700 transition-colors font-medium"
             >
               <ArrowLeft size={18} />
               Zurück
@@ -219,7 +219,7 @@ export default function FuehrungskraeftequalifizierungPage() {
                 <GraduationCap size={30} className="text-white" />
               </div>
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
                   Führungskräftequalifizierung
                 </h1>
                 <p className="mt-2 text-lg text-gray-700 leading-relaxed">
@@ -230,12 +230,12 @@ export default function FuehrungskraeftequalifizierungPage() {
             </div>
 
             <div className="mt-8 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8">
-              <h2 className="text-xl font-bold text-gray-900">Orientierung</h2>
-              <p className="mt-3 text-gray-700 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Orientierung</h2>
+              <p className="mt-3 text-base text-gray-700 leading-relaxed">
                 Die Module sind in thematische Bereiche gegliedert, von Kommunikation und Konfliktmanagement über
                 Innovation und Problemlösung bis zu Leadership, Methodenkompetenz, Gesundheit und Vielfalt.
               </p>
-              <p className="mt-3 text-gray-700 leading-relaxed">
+              <p className="mt-3 text-base text-gray-700 leading-relaxed">
                 Für die Praxis bewährt ist eine Kombination aus (1) Führungsgrundlagen, (2) Kommunikations- und
                 Konfliktkompetenz, (3) Ziel- und Entscheidungsfähigkeit sowie (4) Transferformaten.
               </p>
@@ -258,8 +258,8 @@ export default function FuehrungskraeftequalifizierungPage() {
                             <Icon size={22} className="text-white" />
                           </div>
                           <div>
-                            <h3 className="text-lg md:text-xl font-bold text-gray-900">{category.title}</h3>
-                            <p className="mt-2 text-gray-600 leading-relaxed">{category.summary}</p>
+                            <h3 className="text-2xl font-bold text-gray-900">{category.title}</h3>
+                            <p className="mt-2 text-base text-gray-600 leading-relaxed">{category.summary}</p>
                           </div>
                         </div>
 
@@ -275,8 +275,8 @@ export default function FuehrungskraeftequalifizierungPage() {
                         <div className="space-y-5">
                           {category.groups.map((g) => (
                             <div key={g.title} className="bg-gray-50 rounded-xl p-4 md:p-5">
-                              <h4 className="font-bold text-gray-900">{g.title}</h4>
-                              <ul className="mt-3 space-y-2 text-gray-700">
+                              <h4 className="text-xl font-bold text-gray-900">{g.title}</h4>
+                              <ul className="mt-3 space-y-2 text-base text-gray-700">
                                 {g.items.map((item) => (
                                   <li key={item} className="flex items-start gap-3">
                                     <span className="mt-2 w-2 h-2 bg-gray-400 rounded-full flex-shrink-0" />
@@ -288,7 +288,7 @@ export default function FuehrungskraeftequalifizierungPage() {
                           ))}
                         </div>
                       ) : (
-                        <ul className="space-y-2 text-gray-700">
+                        <ul className="space-y-2 text-base text-gray-700">
                           {(category.items ?? []).map((item) => (
                             <li key={item} className="flex items-start gap-3">
                               <span className="mt-2 w-2 h-2 bg-gray-400 rounded-full flex-shrink-0" />
@@ -304,21 +304,21 @@ export default function FuehrungskraeftequalifizierungPage() {
             </div>
 
             <div className="mt-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 md:p-10 text-white">
-              <h3 className="text-2xl md:text-3xl font-bold">Details besprechen</h3>
-              <p className="mt-3 text-white/90 leading-relaxed max-w-2xl">
+              <h3 className="text-2xl font-bold">Details besprechen</h3>
+              <p className="mt-3 text-base text-white/90 leading-relaxed max-w-2xl">
                 Wenn Sie Zielgruppe, Führungslevel und Kontext nennen, lässt sich daraus ein passender Lernpfad
                 ableiten und priorisieren.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center bg-white text-primary-700 px-6 py-3 rounded-lg font-medium hover:bg-primary-50 transition-colors"
+                  className="inline-flex items-center justify-center bg-white text-primary-700 px-6 py-3 rounded-lg text-base font-medium hover:bg-primary-50 transition-colors"
                 >
                   Zur Startseite
                 </Link>
                 <Link
                   to={`${ROUTES.HOME}${SECTIONS.KONTAKT}`}
-                  className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-colors"
+                  className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-white/20 transition-colors"
                 >
                   Kontakt aufnehmen
                 </Link>

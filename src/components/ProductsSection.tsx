@@ -308,7 +308,7 @@ export default function ProductsSection() {
                               <product.icon size={20} className="text-white" />
                             </div>
                             <div className="flex-1">
-                              <h4 className="font-bold text-white">{product.name}</h4>
+                              <h4 className="text-xl font-bold text-white">{product.name}</h4>
                             </div>
                           </div>
                           <button
@@ -350,7 +350,7 @@ export default function ProductsSection() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">{modalContent.title}</h3>
             </div>
 
-            <div className="text-gray-700 leading-relaxed space-y-4">
+            <div className="text-base text-gray-700 leading-relaxed space-y-4">
               {Array.isArray(modalContent.description) ? (
                 modalContent.description.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -370,7 +370,7 @@ export default function ProductsSection() {
               {modalContent.title === 'Führungskräftequalifizierung' && (
                 <button
                   onClick={goToLeadershipDetails}
-                  className="px-6 py-2 rounded-lg font-medium transition-colors border border-primary-600 text-primary-700 hover:bg-primary-50"
+                  className="px-6 py-2 rounded-lg text-base font-medium transition-colors border border-primary-600 text-primary-700 hover:bg-primary-50"
                 >
                   Details
                 </button>

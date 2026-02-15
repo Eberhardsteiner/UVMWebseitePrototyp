@@ -11,7 +11,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4">
               UVM <span className="font-normal">Consulting Group</span>
             </h3>
-            <p className="text-gray-400 mb-4 max-w-md">
+            <p className="text-base text-gray-400 mb-4 max-w-md">
               Wissenschaftlich fundiert. Praktisch erprobt. Wir befähigen Organisationen,
               zukunftsfähig zu werden.
             </p>
@@ -43,37 +43,37 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-4">4C-Modell</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-xl font-semibold mb-4">4C-Modell</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Culture</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="text-sm hover:text-primary-400 transition-colors">Culture</Link>
               </li>
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Competences</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="text-sm hover:text-primary-400 transition-colors">Competences</Link>
               </li>
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Code of Conduct</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="text-sm hover:text-primary-400 transition-colors">Code of Conduct</Link>
               </li>
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="hover:text-primary-400 transition-colors">Corporate Strategy</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.MODELL}`} className="text-sm hover:text-primary-400 transition-colors">Corporate Strategy</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-4">Leistungen</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-xl font-semibold mb-4">Leistungen</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">4C QuickScan</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="text-sm hover:text-primary-400 transition-colors">4C QuickScan</Link>
               </li>
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">Kompetenzmanagement</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="text-sm hover:text-primary-400 transition-colors">Kompetenzmanagement</Link>
               </li>
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">Kulturentwicklung</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="text-sm hover:text-primary-400 transition-colors">Kulturentwicklung</Link>
               </li>
               <li>
-                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="hover:text-primary-400 transition-colors">KI & Führung</Link>
+                <Link to={`${ROUTES.HOME}${SECTIONS.LEISTUNGEN}`} className="text-sm hover:text-primary-400 transition-colors">KI & Führung</Link>
               </li>
             </ul>
           </div>
@@ -84,8 +84,8 @@ export default function Footer() {
             2026 UVM Consulting Group. Alle Rechte vorbehalten.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <Link to={ROUTES.IMPRESSUM} className="hover:text-primary-400 transition-colors">Impressum</Link>
-            <Link to={ROUTES.DATENSCHUTZ} className="hover:text-primary-400 transition-colors">Datenschutz</Link>
+            <Link to={ROUTES.IMPRESSUM} className="text-sm hover:text-primary-400 transition-colors">Impressum</Link>
+            <Link to={ROUTES.DATENSCHUTZ} className="text-sm hover:text-primary-400 transition-colors">Datenschutz</Link>
           </div>
         </div>
       </div>

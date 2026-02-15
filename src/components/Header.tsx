@@ -35,7 +35,7 @@ export default function Header() {
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-500 focus:text-white focus:rounded-lg focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-500 focus:text-white focus:text-base focus:rounded-lg focus:shadow-lg"
       >
         Zum Hauptinhalt springen
       </a>
@@ -56,7 +56,7 @@ export default function Header() {
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-600 hover:text-primary-500 transition-colors font-medium">
+              <button className="flex items-center gap-1 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium">
                 Unternehmen
                 <ChevronDown size={16} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -68,7 +68,7 @@ export default function Header() {
                       <Link
                         key={item.href}
                         to={item.href}
-                        className="block px-4 py-3 text-gray-600 hover:text-primary-500 hover:bg-primary-50 transition-colors"
+                        className="block px-4 py-3 text-sm text-gray-600 hover:text-primary-500 hover:bg-primary-50 transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -82,7 +82,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 to={isHomePage ? item.href : `${ROUTES.HOME}${item.href}`}
-                className="text-gray-600 hover:text-primary-500 transition-colors font-medium whitespace-nowrap"
+                className="text-base text-gray-600 hover:text-primary-500 transition-colors font-medium whitespace-nowrap"
               >
                 {item.label}
               </Link>
@@ -90,7 +90,7 @@ export default function Header() {
 
             <Link
               to={isHomePage ? SECTIONS.KONTAKT : `${ROUTES.HOME}${SECTIONS.KONTAKT}`}
-              className="bg-primary-500 text-white px-5 py-2.5 rounded-lg hover:bg-primary-600 transition-colors font-medium whitespace-nowrap"
+              className="bg-primary-500 text-white px-5 py-2.5 rounded-lg text-base hover:bg-primary-600 transition-colors font-medium whitespace-nowrap"
             >
               Gespräch starten
             </Link>
@@ -110,7 +110,7 @@ export default function Header() {
             <div>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-full flex items-center justify-between py-3 text-gray-600 hover:text-primary-500 transition-colors font-medium"
+                className="w-full flex items-center justify-between py-3 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium"
               >
                 Unternehmen
                 <ChevronDown size={16} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -121,7 +121,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       to={item.href}
-                      className="block py-2 text-gray-500 hover:text-primary-500 transition-colors"
+                      className="block py-2 text-sm text-gray-500 hover:text-primary-500 transition-colors"
                       onClick={() => {
                         setIsOpen(false);
                         setIsDropdownOpen(false);
@@ -138,7 +138,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 to={isHomePage ? item.href : `${ROUTES.HOME}${item.href}`}
-                className="block py-3 text-gray-600 hover:text-primary-500 transition-colors font-medium"
+                className="block py-3 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -147,7 +147,7 @@ export default function Header() {
 
             <Link
               to={isHomePage ? SECTIONS.KONTAKT : `${ROUTES.HOME}${SECTIONS.KONTAKT}`}
-              className="block mt-4 bg-primary-500 text-white px-5 py-2.5 rounded-lg hover:bg-primary-600 transition-colors font-medium text-center"
+              className="block mt-4 bg-primary-500 text-white px-5 py-2.5 rounded-lg text-base hover:bg-primary-600 transition-colors font-medium text-center"
               onClick={() => setIsOpen(false)}
             >
               Gespräch starten
