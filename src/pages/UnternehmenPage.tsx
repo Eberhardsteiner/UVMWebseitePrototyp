@@ -72,7 +72,7 @@ function CompanyCard({ company }: { company: Company }) {
             href={company.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors group/link shadow-sm hover:shadow-md"
+            className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 transition-colors group/link shadow-sm hover:shadow-md"
           >
             <span>Website</span>
             <svg
@@ -178,18 +178,18 @@ export default function UnternehmenPage() {
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900">UVM Consulting Group</h1>
             </div>
             <div className="prose prose-lg max-w-none">
-              <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Die UVM Consulting Group ist Ihr strategischer Partner für nachhaltige Unternehmensentwicklung.
                 Mit unserem ganzheitlichen 4C-Ansatz begleiten wir Organisationen auf ihrem Weg zu mehr Erfolg,
                 Effizienz und zukunftsorientierter Ausrichtung.
               </p>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Unsere Expertise verbindet bewährte Beratungsmethoden mit innovativen Lösungen. Wir verstehen
                 uns als Partner auf Augenhöhe, der Ihre individuellen Herausforderungen analysiert und gemeinsam
                 mit Ihnen maßgeschneiderte Strategien entwickelt.
               </p>
 
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Die UVM-Consulting Group besteht aus einer Reihe von spezialisierten Unternehmen:
               </p>
 
@@ -217,8 +217,10 @@ export default function UnternehmenPage() {
               <AccordionItem
                 title="Prof. Dr. Miriam Landes"
                 subtitle="Diplom-Psychologin, Humanbiologin und promovierte Expertin im Bereich Motivation und Persönlichkeit (LMU München)"
+                imageSrc="/img/people/MiriamLandes.jpg"
+                imageAlt="Prof. Dr. Miriam Landes"
               >
-                <div className="space-y-6 text-gray-700">
+                <div className="space-y-6 text-base text-gray-700">
                   <p className="text-lg leading-relaxed">
                     Prof. Dr. Miriam Landes steht für wissenschaftlich fundierte, praxisorientierte Führungskräfteentwicklung.
                     Ihre Arbeit verbindet aktuelle Forschung mit den konkreten Herausforderungen moderner Organisationen –
@@ -244,7 +246,7 @@ export default function UnternehmenPage() {
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <h4 className="text-xl font-bold text-gray-900 mb-6">Kompetenzen</h4>
 
-                    <div className="space-y-4">
+                    <div className="space-y-4 text-base">
                       <CompetenceAccordion title="Motivation, Persönlichkeit & Führung">
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2">
@@ -346,8 +348,10 @@ export default function UnternehmenPage() {
               <AccordionItem
                 title="Prof. Dr. Eberhard Steiner"
                 subtitle="Wirtschaftswissenschaftler, Dr. rer. pol. (TU Freiberg), Dipl.-Kfm. (Univ.), Dipl.-Betriebswirt (FH), Experte für Strategie, Digitalisierung und Innovation"
+                imageSrc="/img/people/EberhardSteiner.jpg"
+                imageAlt="Prof. Dr. Eberhard Steiner"
               >
-                <div className="space-y-6 text-gray-700">
+                <div className="space-y-6 text-base text-gray-700">
                   <p className="text-lg leading-relaxed">
                     Unternehmen sind heute besonders gefordert, Innovationskraft, agile Strukturen und eine zukunftsweisende
                     Strategie zu entwickeln. Prof. Dr. Eberhard Steiner vereint tiefgreifendes Wissen in den Bereichen
@@ -371,7 +375,7 @@ export default function UnternehmenPage() {
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Kompetenzen:</h4>
 
-                    <div className="space-y-4 mt-6">
+                    <div className="space-y-4 mt-6 text-base">
                       <CompetenceAccordion title="KI & Kreativität, Management & Strategie">
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2">
@@ -462,8 +466,8 @@ export default function UnternehmenPage() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary-600 font-bold mt-1 text-xl">1)</span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">Integrität und Verantwortung</h4>
-                      <p className="leading-relaxed">
+                      <h4 className="text-xl font-bold mb-2">Integrität und Verantwortung</h4>
+                      <p className="text-base leading-relaxed">
                         Wir sagen klar, was wir wissen, was wir annehmen und wo Grenzen liegen. Entscheidungen sollen
                         nachvollziehbar, fair und verantwortungsbewusst sein.
                       </p>
@@ -472,8 +476,8 @@ export default function UnternehmenPage() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary-600 font-bold mt-1 text-xl">2)</span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">Klarheit statt Aktionismus</h4>
-                      <p className="leading-relaxed">
+                      <h4 className="text-xl font-bold mb-2">Klarheit statt Aktionismus</h4>
+                      <p className="text-base leading-relaxed">
                         Disruption erzeugt Druck. Wir schaffen zuerst Orientierung: Was ist wirklich das Problem,
                         was ist Priorität, was ist „nice to have".
                       </p>
@@ -482,8 +486,8 @@ export default function UnternehmenPage() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary-600 font-bold mt-1 text-xl">3)</span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">Praxisbezug und wissenschaftliche Fundierung</h4>
-                      <p className="leading-relaxed">
+                      <h4 className="text-xl font-bold mb-2">Praxisbezug und wissenschaftliche Fundierung</h4>
+                      <p className="text-base leading-relaxed">
                         Wir bieten praxiserprobte Konzepte und Methoden und vermitteln Handlungskompetenz - immer auf
                         der Basis seriöser wissenschaftlicher Methoden.
                       </p>
@@ -492,8 +496,8 @@ export default function UnternehmenPage() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary-600 font-bold mt-1 text-xl">4)</span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">Partnerschaft auf Augenhöhe</h4>
-                      <p className="leading-relaxed">
+                      <h4 className="text-xl font-bold mb-2">Partnerschaft auf Augenhöhe</h4>
+                      <p className="text-base leading-relaxed">
                         Wir arbeiten nicht „am Unternehmen vorbei", sondern mit den relevanten Rollen gemeinsam.
                         Gute Lösungen müssen in den Alltag passen, sonst bleiben sie Papier.
                       </p>
@@ -502,8 +506,8 @@ export default function UnternehmenPage() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary-600 font-bold mt-1 text-xl">5)</span>
                     <div>
-                      <h4 className="font-bold text-lg mb-2">Respekt und psychologische Sicherheit</h4>
-                      <p className="leading-relaxed">
+                      <h4 className="text-xl font-bold mb-2">Respekt und psychologische Sicherheit</h4>
+                      <p className="text-base leading-relaxed">
                         Leistung entsteht dort, wo Menschen offen sprechen können, Fehler adressiert werden dürfen und
                         Führung Orientierung gibt. Das ist eine Kulturfrage, keine Rhetorik.
                       </p>

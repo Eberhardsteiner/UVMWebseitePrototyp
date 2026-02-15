@@ -58,7 +58,7 @@ export default function ProcessSection() {
                   <Icon className="text-primary-600 flex-shrink-0" size={24} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                <p className="text-base text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             );
           })}

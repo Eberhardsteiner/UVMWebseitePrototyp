@@ -15,6 +15,8 @@ type SegmentConfig = {
   roundedClass: string;
   originClass: string;
   subtitleClass?: string;
+  /** Padding on outer edges to pull text toward center */
+  innerPaddingClass?: string;
 };
 
 const SEGMENTS: SegmentConfig[] = [
@@ -27,6 +29,7 @@ const SEGMENTS: SegmentConfig[] = [
     bgClass: 'bg-gradient-to-br from-primary-400 to-primary-500',
     roundedClass: 'rounded-tl-full',
     originClass: 'origin-bottom-right',
+    innerPaddingClass: 'pt-10 pl-10 md:pt-12 md:pl-12',
   },
   {
     id: 'competences',
@@ -37,6 +40,7 @@ const SEGMENTS: SegmentConfig[] = [
     bgClass: 'bg-gradient-to-bl from-secondary-400 to-secondary-500',
     roundedClass: 'rounded-tr-full',
     originClass: 'origin-bottom-left',
+    innerPaddingClass: 'pt-10 pr-10 md:pt-12 md:pr-12',
   },
   {
     id: 'conduct',
@@ -49,6 +53,7 @@ const SEGMENTS: SegmentConfig[] = [
     roundedClass: 'rounded-bl-full',
     originClass: 'origin-top-right',
     subtitleClass: 'break-words hyphens-auto',
+    innerPaddingClass: 'pb-10 pl-10 md:pb-12 md:pl-12',
   },
   {
     id: 'strategy',
@@ -61,6 +66,7 @@ const SEGMENTS: SegmentConfig[] = [
     roundedClass: 'rounded-br-full',
     originClass: 'origin-top-left',
     subtitleClass: 'break-words hyphens-auto',
+    innerPaddingClass: 'pb-10 pr-10 md:pb-12 md:pr-12',
   },
 ];
 
@@ -102,7 +108,7 @@ export default function HeroSection() {
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 fade-in-up py-2">
             Zukunftsfähigkeit ist kein Zufall.
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 mt-2">Sie ist das Ergebnis eines Systems.</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 mt-2 pb-4">Sie ist das Ergebnis eines Systems.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed fade-in-up delay-100">
@@ -112,7 +118,7 @@ export default function HeroSection() {
           </p>
 
           <div className="mb-32">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 fade-in-up delay-200">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 fade-in-up delay-200">
               Der größte Treiber des Fortschritts ist die Disruption.
             </h2>
 
@@ -123,7 +129,7 @@ export default function HeroSection() {
                     <Cpu className="text-white" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-primary-900 text-lg mb-2">Digitale Disruption & KI</h3>
+                    <h3 className="text-xl font-semibold text-primary-900 mb-2">Digitale Disruption & KI</h3>
                     <p className="text-primary-700 text-sm leading-relaxed">
                       KI ändert alles - wie stellen Sie sicher, dass Ihr Geschäftsmodell zukunftsfähig
                       bleibt?
@@ -138,7 +144,7 @@ export default function HeroSection() {
                     <Users className="text-white" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-secondary-900 text-lg mb-2">
+                    <h3 className="text-xl font-semibold text-secondary-900 mb-2">
                       Future Skills & Fachkräftemangel
                     </h3>
                     <p className="text-secondary-700 text-sm leading-relaxed">
@@ -155,7 +161,7 @@ export default function HeroSection() {
                     <Building2 className="text-white" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-quaternary-900 text-lg mb-2">
+                    <h3 className="text-xl font-semibold text-quaternary-900 mb-2">
                       Kulturwandel & New Work
                     </h3>
                     <p className="text-quaternary-700 text-sm leading-relaxed">
@@ -173,7 +179,7 @@ export default function HeroSection() {
                     <Shield className="text-white" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-tertiary-900 text-lg mb-2">
+                    <h3 className="text-xl font-semibold text-tertiary-900 mb-2">
                       Krisenfestigkeit & tiefgreifender Wandel
                     </h3>
                     <p className="text-tertiary-700 text-sm leading-relaxed">
@@ -223,6 +229,7 @@ export default function HeroSection() {
                             'transform-gpu',
                             seg.originClass,
                             'flex items-center justify-center',
+                            seg.innerPaddingClass ?? '',
                             'cursor-pointer',
                             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60',
                             'transition-all duration-700 ease-out',
@@ -270,7 +277,7 @@ export default function HeroSection() {
                             {/* Subtitle - hidden on hover */}
                             <div
                               className={[
-                                'text-white/90 text-[10px] md:text-xs mt-0.5 leading-tight',
+                                'text-white/90 text-xs mt-0.5 leading-tight',
                                 seg.subtitleClass ?? 'break-words',
                                 'transition-all duration-200 ease-out',
                                 isActive
@@ -294,7 +301,7 @@ export default function HeroSection() {
                                 ].join(' ')
                               }
                             >
-                              <div className={isActive ? 'text-base md:text-base lg:text-lg font-medium px-2' : 'text-[11px] md:text-xs lg:text-sm'}>
+                              <div className={isActive ? 'text-base md:text-base lg:text-lg font-medium px-2' : 'text-xs md:text-xs lg:text-sm'}>
                                 <span className="block">{seg.sloganLines[0]}</span>
                                 <span className="block">{seg.sloganLines[1]}</span>
                               </div>
@@ -325,7 +332,7 @@ export default function HeroSection() {
             href="#modell"
             className="inline-flex items-center gap-2 mt-12 text-gray-500 hover:text-primary-600 transition-all duration-300 group fade-in-up delay-600"
           >
-            <span className="font-medium">Mehr erfahren</span>
+            <span className="text-base font-medium">Mehr erfahren</span>
             <ArrowDown size={20} className="animate-bounce group-hover:translate-y-1 transition-transform" />
           </a>
         </div>

@@ -128,7 +128,7 @@ export default function ModelSection() {
                       <dim.icon className={dim.accentColor} size={32} />
                     </div>
                     <div>
-                      <h3 className={`text-2xl lg:text-3xl font-bold ${dim.textColor}`}>{dim.title}</h3>
+                      <h3 className={`text-2xl font-bold ${dim.textColor}`}>{dim.title}</h3>
                       <p className="text-gray-500 text-base lg:text-lg mt-1">{dim.subtitle}</p>
                     </div>
                   </div>
@@ -193,7 +193,7 @@ export default function ModelSection() {
                 </div>
               </div>
               <div>
-                <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
                   Warum ein integriertes System?
                 </h4>
                 <p className="text-gray-600 text-lg leading-relaxed">

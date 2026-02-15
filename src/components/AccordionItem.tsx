@@ -6,9 +6,11 @@ interface AccordionItemProps {
   subtitle: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-export default function AccordionItem({ title, subtitle, children, defaultOpen = false }: AccordionItemProps) {
+export default function AccordionItem({ title, subtitle, children, defaultOpen = false, imageSrc, imageAlt }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
@@ -17,9 +19,14 @@ export default function AccordionItem({ title, subtitle, children, defaultOpen =
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-8 py-6 flex items-center justify-between text-left transition-colors hover:bg-gray-50"
       >
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-gray-900 mb-1">{title}</h3>
-          <p className="text-primary-600 font-medium">{subtitle}</p>
+        <div className="flex-1 flex items-center gap-5">
+          {imageSrc && (
+            <img src={imageSrc} alt={imageAlt ?? title} className="w-32 rounded-lg object-cover flex-shrink-0" />
+          )}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-1">{title}</h3>
+            <p className="text-base text-primary-600 font-medium">{subtitle}</p>
+          </div>
         </div>
         <ChevronDown
           size={28}

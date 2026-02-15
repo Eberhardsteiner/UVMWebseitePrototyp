@@ -1,56 +1,57 @@
 /** @type {import('tailwindcss').Config} */
+// Typography: use only Tailwind font-size scale (text-xs → text-9xl). Roles: caption=xs, secondary=sm, body=base, lead=lg, h4=xl, h3=2xl, h2=3xl md:4xl, h1=4xl md:5xl (hero + lg:6xl).
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#e6e9eb',
-          100: '#b3bcc2',
-          200: '#8a98a1',
-          300: '#576b78',
-          400: '#3d4f5c',
-          500: '#001B2C', // Darkest navy blue (Culture) - Very dark
-          600: '#001825',
-          700: '#00141e',
-          800: '#001017',
-          900: '#000c11',
+          50: '#e6f4f6',
+          100: '#b3dfe4',
+          200: '#8acdd4',
+          300: '#5ab5c0',
+          400: '#3d9ba8',
+          500: '#004D5F', // Rich teal (Culture) - Deeper, more saturated turquoise base
+          600: '#003f4f',
+          700: '#00313f',
+          800: '#00232f',
+          900: '#00151f',
         },
         secondary: {
-          50: '#f0f2f3',
-          100: '#d4d9dc',
-          200: '#b8c0c5',
-          300: '#9ca7ae',
-          400: '#808e97',
-          500: '#3C4449', // Dark gray-blue (Competences) - Dark-medium
-          600: '#2d3748',
-          700: '#1a202c',
-          800: '#171923',
-          900: '#0f1117',
+          50: '#f0f5f7',
+          100: '#d4e4ea',
+          200: '#b8d3dd',
+          300: '#9cc2d0',
+          400: '#80b1c3',
+          500: '#2D5A6B', // Teal-blue (Competences) - More vibrant secondary turquoise
+          600: '#254b5a',
+          700: '#1d3c49',
+          800: '#152d38',
+          900: '#0d1e27',
         },
         tertiary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#b8c2d1',
-          500: '#8590A0', // Light blue-gray (Strategy) - Light (slightly darkened for contrast)
-          600: '#94a3b8',
-          700: '#718096',
-          800: '#4a5568',
-          900: '#2d3748',
+          50: '#f0f8fa',
+          100: '#d9ecf0',
+          200: '#c2e0e6',
+          300: '#a5d0d9',
+          400: '#88c0cc',
+          500: '#5FA3B5', // Soft turquoise (Strategy) - Lighter, fresher turquoise tone
+          600: '#518a99',
+          700: '#41717d',
+          800: '#315861',
+          900: '#213f45',
         },
         quaternary: {
-          50: '#f0f4f8',
-          100: '#d9e2ec',
-          200: '#bcccdc',
-          300: '#9fb3c8',
-          400: '#829ab1',
-          500: '#6B7F95', // Medium blue-gray (Conduct) - Medium
-          600: '#5b7282',
-          700: '#486581',
-          800: '#334e68',
-          900: '#243b53',
+          50: '#f0f7f9',
+          100: '#d9e9ed',
+          200: '#c2dbe1',
+          300: '#a5c9d1',
+          400: '#88b7c1',
+          500: '#4A8FA0', // Medium teal (Conduct) - Balanced, modern mid-tone turquoise
+          600: '#3f7a88',
+          700: '#346570',
+          800: '#295058',
+          900: '#1e3b40',
         },
       },
     },

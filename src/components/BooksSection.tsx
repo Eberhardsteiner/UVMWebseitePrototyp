@@ -116,7 +116,7 @@ export default function BooksSection() {
               </div>
               {/* Details */}
               <div>
-                <h3 className="font-bold text-lg text-gray-900">{book.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900">{book.title}</h3>
                 <p className="text-primary-600 text-sm">{book.authors}</p>
                 <div className="mt-2 text-gray-700 text-sm leading-snug">
                   {book.summary.map((line, idx) => (

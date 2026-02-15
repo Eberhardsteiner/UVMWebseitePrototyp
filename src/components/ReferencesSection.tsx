@@ -186,7 +186,7 @@ export default function ReferencesSection() {
           </div>
           <div className="min-w-0">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Referenzen</h2>
-            <p className="mt-2 text-gray-700 leading-relaxed">
+            <p className="mt-2 text-base text-gray-700 leading-relaxed">
               Auswahl an Organisationen, für die die UVM Consulting Group tätig war (alphabetisch):
             </p>
           </div>
@@ -200,7 +200,7 @@ export default function ReferencesSection() {
                   {group.letter}
                 </div>
               </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-base text-gray-700">
                 {group.entries.map((entry) => (
                   <li key={entry.name} className="flex items-start gap-3">
                     <span className="mt-2 w-2 h-2 bg-primary-600 rounded-full flex-shrink-0" />
