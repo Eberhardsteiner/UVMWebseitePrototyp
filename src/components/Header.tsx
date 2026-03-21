@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { ROUTES, SECTIONS } from '../constants/paths';
@@ -6,6 +6,7 @@ import { ROUTES, SECTIONS } from '../constants/paths';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isHomePage = location.pathname === ROUTES.HOME || location.pathname === '/';
 
@@ -14,6 +15,22 @@ export default function Header() {
       setIsDropdownOpen(false);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   const navItems = [
     { label: '4C-Modell', href: '#ansatz' },
@@ -51,12 +68,11 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <div
-              className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
-            >
-              <button className="flex items-center gap-1 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium">
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center gap-1 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium"
+              >
                 Unternehmen
                 <ChevronDown size={16} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -68,6 +84,7 @@ export default function Header() {
                       <Link
                         key={item.href}
                         to={item.href}
+                        onClick={() => setIsDropdownOpen(false)}
                         className="block px-4 py-3 text-sm text-gray-600 hover:text-primary-500 hover:bg-primary-50 transition-colors"
                       >
                         {item.label}
