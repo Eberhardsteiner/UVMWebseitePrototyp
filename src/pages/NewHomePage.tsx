@@ -6,6 +6,7 @@ import { ROUTES } from '../constants/paths';
 function NewHomePage() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,24 +53,68 @@ function NewHomePage() {
           </Link>
 
           <div className="hidden md:flex items-center gap-lg">
+            <div
+              className="relative"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <button className="text-xs font-medium text-white/60 tracking-[0.1em] uppercase transition-colors hover:text-white flex items-center gap-1">
+                Unternehmen
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              {dropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-dark border border-accent/20 shadow-xl">
+                  <Link
+                    to={ROUTES.UNTERNEHMEN}
+                    className="block px-4 py-3 text-xs text-white/70 hover:bg-accent/10 hover:text-white transition-colors border-b border-white/5"
+                  >
+                    UVM Consulting Group
+                  </Link>
+                  <a
+                    href={`${ROUTES.UNTERNEHMEN}#geschaeftsfuehrung`}
+                    className="block px-4 py-3 text-xs text-white/70 hover:bg-accent/10 hover:text-white transition-colors border-b border-white/5"
+                  >
+                    Geschäftsführung
+                  </a>
+                  <a
+                    href={`${ROUTES.UNTERNEHMEN}#werte`}
+                    className="block px-4 py-3 text-xs text-white/70 hover:bg-accent/10 hover:text-white transition-colors border-b border-white/5"
+                  >
+                    Werte und Beratungsansatz
+                  </a>
+                  <a
+                    href={`${ROUTES.UNTERNEHMEN}#netzwerkpartner`}
+                    className="block px-4 py-3 text-xs text-white/70 hover:bg-accent/10 hover:text-white transition-colors border-b border-white/5"
+                  >
+                    Netzwerkpartner
+                  </a>
+                  <a
+                    href={`${ROUTES.UNTERNEHMEN}#referenzen`}
+                    className="block px-4 py-3 text-xs text-white/70 hover:bg-accent/10 hover:text-white transition-colors border-b border-white/5"
+                  >
+                    Referenzen
+                  </a>
+                  <a
+                    href={`${ROUTES.UNTERNEHMEN}#publikationen`}
+                    className="block px-4 py-3 text-xs text-white/70 hover:bg-accent/10 hover:text-white transition-colors"
+                  >
+                    Publikationen
+                  </a>
+                </div>
+              )}
+            </div>
             <a
               href="#ansatz"
               className="text-xs font-medium text-white/60 tracking-[0.1em] uppercase transition-colors hover:text-white"
             >
-              Ansatz
+              4C-Modell
             </a>
             <a
-              href="#prozess"
+              href="https://uvm-akademie.de/web2026/#leistungen"
               className="text-xs font-medium text-white/60 tracking-[0.1em] uppercase transition-colors hover:text-white"
             >
-              Prozess
+              Leistungen
             </a>
-            <Link
-              to={ROUTES.UNTERNEHMEN}
-              className="text-xs font-medium text-white/60 tracking-[0.1em] uppercase transition-colors hover:text-white"
-            >
-              Unternehmen
-            </Link>
             <a
               href="#kontakt"
               className="bg-accent text-white px-5 py-2.5 text-xs font-semibold tracking-[0.08em] uppercase transition-all hover:bg-accent-light"
@@ -94,27 +139,67 @@ function NewHomePage() {
         <div className="fixed inset-0 z-40 bg-dark flex items-center justify-center">
           <div className="text-center">
             <div className="flex flex-col gap-lg">
+              <div className="flex flex-col gap-3">
+                <span className="text-sm text-accent uppercase tracking-[0.15em] font-semibold">
+                  Unternehmen
+                </span>
+                <Link
+                  to={ROUTES.UNTERNEHMEN}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-base text-white/70 tracking-[0.08em] font-light"
+                >
+                  UVM Consulting Group
+                </Link>
+                <a
+                  href={`${ROUTES.UNTERNEHMEN}#geschaeftsfuehrung`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-base text-white/70 tracking-[0.08em] font-light"
+                >
+                  Geschäftsführung
+                </a>
+                <a
+                  href={`${ROUTES.UNTERNEHMEN}#werte`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-base text-white/70 tracking-[0.08em] font-light"
+                >
+                  Werte und Beratungsansatz
+                </a>
+                <a
+                  href={`${ROUTES.UNTERNEHMEN}#netzwerkpartner`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-base text-white/70 tracking-[0.08em] font-light"
+                >
+                  Netzwerkpartner
+                </a>
+                <a
+                  href={`${ROUTES.UNTERNEHMEN}#referenzen`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-base text-white/70 tracking-[0.08em] font-light"
+                >
+                  Referenzen
+                </a>
+                <a
+                  href={`${ROUTES.UNTERNEHMEN}#publikationen`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-base text-white/70 tracking-[0.08em] font-light"
+                >
+                  Publikationen
+                </a>
+              </div>
               <a
                 href="#ansatz"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-xl text-white uppercase tracking-[0.1em] font-light"
               >
-                Ansatz
+                4C-Modell
               </a>
               <a
-                href="#prozess"
+                href="https://uvm-akademie.de/web2026/#leistungen"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-xl text-white uppercase tracking-[0.1em] font-light"
               >
-                Prozess
+                Leistungen
               </a>
-              <Link
-                to={ROUTES.UNTERNEHMEN}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-xl text-white uppercase tracking-[0.1em] font-light"
-              >
-                Unternehmen
-              </Link>
               <a
                 href="#kontakt"
                 onClick={() => setMobileMenuOpen(false)}
