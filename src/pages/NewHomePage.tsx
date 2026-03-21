@@ -39,7 +39,7 @@ function NewHomePage() {
   return (
     <div className="min-h-screen bg-white">
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-dark/97 backdrop-blur-xl shadow-[0_1px_0_rgba(13,148,136,0.15)] ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-dark shadow-[0_1px_0_rgba(13,148,136,0.15)] ${
           scrolled ? 'py-3' : 'py-4'
         }`}
       >
