@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import NewHomePage from './pages/NewHomePage';
 import ErrorBoundary from './components/ErrorBoundary';
 import { BASE_PATH, ROUTES } from './constants/paths';
 
@@ -26,7 +26,7 @@ function App() {
       <BrowserRouter basename={BASE_PATH}>
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            <Route path={ROUTES.HOME} element={<HomePage />} />
+            <Route path={ROUTES.HOME} element={<NewHomePage />} />
             <Route path={ROUTES.UNTERNEHMEN} element={<UnternehmenPage />} />
             <Route path={ROUTES.FUEHRUNGSKRAEFTEQUALIFIZIERUNG} element={<FuehrungskraeftequalifizierungPage />} />
             <Route path={ROUTES.IMPRESSUM} element={<ImpressumPage />} />

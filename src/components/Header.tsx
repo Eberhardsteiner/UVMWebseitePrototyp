@@ -16,10 +16,10 @@ export default function Header() {
   }, [isOpen]);
 
   const navItems = [
-    { label: '4C-Modell', href: SECTIONS.MODELL },
-    { label: 'Prozess', href: SECTIONS.PROZESS },
-    { label: 'Leistungen', href: SECTIONS.LEISTUNGEN },
-    { label: 'Kontakt', href: SECTIONS.KONTAKT },
+    { label: '4C-Modell', href: '#ansatz' },
+    { label: 'Prozess', href: '#prozess' },
+    { label: 'Führungskräfte', href: ROUTES.FUEHRUNGSKRAEFTEQUALIFIZIERUNG },
+    { label: 'Kontakt', href: '#kontakt' },
   ];
 
   const dropdownItems = [
@@ -78,22 +78,39 @@ export default function Header() {
               )}
             </div>
 
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={isHomePage ? item.href : `${ROUTES.HOME}${item.href}`}
-                className="text-base text-gray-600 hover:text-primary-500 transition-colors font-medium whitespace-nowrap"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isExternalLink = item.href.startsWith('#');
+              const isRouteLink = !isExternalLink;
 
-            <Link
-              to={isHomePage ? SECTIONS.KONTAKT : `${ROUTES.HOME}${SECTIONS.KONTAKT}`}
+              if (isRouteLink) {
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="text-base text-gray-600 hover:text-primary-500 transition-colors font-medium whitespace-nowrap"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              return (
+                <a
+                  key={item.href}
+                  href={isHomePage ? item.href : `${ROUTES.HOME}${item.href}`}
+                  className="text-base text-gray-600 hover:text-primary-500 transition-colors font-medium whitespace-nowrap"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+
+            <a
+              href={isHomePage ? '#kontakt' : `${ROUTES.HOME}#kontakt`}
               className="bg-primary-500 text-white px-5 py-2.5 rounded-lg text-base hover:bg-primary-600 transition-colors font-medium whitespace-nowrap"
             >
               Gespräch starten
-            </Link>
+            </a>
           </nav>
 
           <button
@@ -134,24 +151,42 @@ export default function Header() {
               )}
             </div>
 
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={isHomePage ? item.href : `${ROUTES.HOME}${item.href}`}
-                className="block py-3 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isExternalLink = item.href.startsWith('#');
+              const isRouteLink = !isExternalLink;
 
-            <Link
-              to={isHomePage ? SECTIONS.KONTAKT : `${ROUTES.HOME}${SECTIONS.KONTAKT}`}
+              if (isRouteLink) {
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="block py-3 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              return (
+                <a
+                  key={item.href}
+                  href={isHomePage ? item.href : `${ROUTES.HOME}${item.href}`}
+                  className="block py-3 text-base text-gray-600 hover:text-primary-500 transition-colors font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+
+            <a
+              href={isHomePage ? '#kontakt' : `${ROUTES.HOME}#kontakt`}
               className="block mt-4 bg-primary-500 text-white px-5 py-2.5 rounded-lg text-base hover:bg-primary-600 transition-colors font-medium text-center"
               onClick={() => setIsOpen(false)}
             >
               Gespräch starten
-            </Link>
+            </a>
           </nav>
         )}
       </div>
