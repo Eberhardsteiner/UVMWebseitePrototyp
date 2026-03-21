@@ -62,7 +62,7 @@ export default function Header() {
               </button>
 
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 -mt-3 pt-3 w-64">
+                <div className="absolute top-full left-0 pt-2 w-64">
                   <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
                     {dropdownItems.map((item) => (
                       <Link
