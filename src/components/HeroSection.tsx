@@ -21,23 +21,27 @@ type SegmentConfig = {
 
 const SEGMENTS: SegmentConfig[] = [
   {
+    id: 'strategy',
+    title: 'Corporate Strategy',
+    titleLines: ['Corporate', 'Strategy'],
+    subtitle: 'Unternehmensstrategie',
+    sloganLines: ['Strategie gibt Richtung', 'und fokussiert Ressourcen.'],
+    // Top-left quadrant
+    positionClass: 'top-0 left-0',
+    bgClass: 'bg-gradient-to-tl from-tertiary-400 to-tertiary-300',
+    roundedClass: 'rounded-tl-full',
+    originClass: 'origin-bottom-right',
+    subtitleClass: 'break-words hyphens-auto',
+    innerPaddingClass: 'pt-10 pl-10 md:pt-12 md:pl-12',
+  },
+  {
     id: 'culture',
     title: 'Culture',
     subtitle: 'Kultur',
     sloganLines: ['Kultur legt die Basis', 'und prägt Verhalten.'],
-    positionClass: 'top-0 left-0',
-    bgClass: 'bg-gradient-to-br from-primary-400 to-primary-500',
-    roundedClass: 'rounded-tl-full',
-    originClass: 'origin-bottom-right',
-    innerPaddingClass: 'pt-10 pl-10 md:pt-12 md:pl-12',
-  },
-  {
-    id: 'competences',
-    title: 'Competences',
-    subtitle: 'Kompetenzen',
-    sloganLines: ['Kompetenzen machen Können', 'wirksam und messbar.'],
+    // Top-right quadrant
     positionClass: 'top-0 right-0',
-    bgClass: 'bg-gradient-to-bl from-secondary-400 to-secondary-500',
+    bgClass: 'bg-gradient-to-br from-primary-400 to-primary-500',
     roundedClass: 'rounded-tr-full',
     originClass: 'origin-bottom-left',
     innerPaddingClass: 'pt-10 pr-10 md:pt-12 md:pr-12',
@@ -48,6 +52,7 @@ const SEGMENTS: SegmentConfig[] = [
     titleLines: ['Code of', 'Conduct'],
     subtitle: 'Verhaltensgrundsätze',
     sloganLines: ['Grundsätze schaffen Klarheit', 'und schützen Vertrauen.'],
+    // Bottom-left quadrant
     positionClass: 'bottom-0 left-0',
     bgClass: 'bg-gradient-to-tr from-quaternary-500 to-quaternary-400',
     roundedClass: 'rounded-bl-full',
@@ -56,16 +61,15 @@ const SEGMENTS: SegmentConfig[] = [
     innerPaddingClass: 'pb-10 pl-10 md:pb-12 md:pl-12',
   },
   {
-    id: 'strategy',
-    title: 'Corporate Strategy',
-    titleLines: ['Corporate', 'Strategy'],
-    subtitle: 'Unternehmensstrategie',
-    sloganLines: ['Strategie gibt Richtung', 'und fokussiert Ressourcen.'],
+    id: 'competences',
+    title: 'Competences',
+    subtitle: 'Kompetenzen',
+    sloganLines: ['Kompetenzen machen Können', 'wirksam und messbar.'],
+    // Bottom-right quadrant
     positionClass: 'bottom-0 right-0',
-    bgClass: 'bg-gradient-to-tl from-tertiary-400 to-tertiary-300',
+    bgClass: 'bg-gradient-to-bl from-secondary-400 to-secondary-500',
     roundedClass: 'rounded-br-full',
     originClass: 'origin-top-left',
-    subtitleClass: 'break-words hyphens-auto',
     innerPaddingClass: 'pb-10 pr-10 md:pb-12 md:pr-12',
   },
 ];
@@ -85,10 +89,10 @@ export default function HeroSection() {
     const rotation = 45 * (1 - scrollProgress);
 
     const offsets = {
-      culture: { x: -1, y: -1, rotate: -1 },
-      competences: { x: 1, y: -1, rotate: 1 },
-      conduct: { x: -1, y: 1, rotate: 1 },
-      strategy: { x: 1, y: 1, rotate: -1 },
+      strategy: { x: -1, y: -1, rotate: -1 }, // top-left
+      culture: { x: 1, y: -1, rotate: 1 }, // top-right
+      conduct: { x: -1, y: 1, rotate: 1 }, // bottom-left
+      competences: { x: 1, y: 1, rotate: -1 }, // bottom-right
     };
 
     const offset = offsets[segmentId];
